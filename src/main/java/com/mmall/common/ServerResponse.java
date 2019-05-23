@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 /**
  * Created by Administrator on 2019/5/11.
+ *
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 //保证序列化的时候，如果是null的对象，key也会消失
@@ -40,11 +41,11 @@ public class ServerResponse<T> implements Serializable {
     //使之不在json序列化结果当中
     public boolean isSuccess(){
        return this.status == ResponseCode.SUCCESS.getCode();
-   }
-    public  int getStatus(){
-        return status;
     }
 
+    public int getStatus(){
+        return status;
+    }
     public T getData(){
         return data;
     }
@@ -64,15 +65,12 @@ public class ServerResponse<T> implements Serializable {
     public static <T> ServerResponse<T> createBySuccess(String msg,T date){
         return new ServerResponse<T>(ResponseCode.SUCCESS.getCode(),msg,date);
     }
-
     public static <T> ServerResponse<T> createByError(){
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(),ResponseCode.ERROR.getDesc());
     }
-
     public static <T> ServerResponse<T> createByErrorByMessage(String errorMessage){
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(),errorMessage);
     }
-
     public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String errorMessage){
         return new ServerResponse<T>(errorCode,errorMessage);
     }

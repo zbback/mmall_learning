@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2019/5/12.
@@ -26,6 +29,7 @@ public class UserManagerController {
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session){
         ServerResponse<User> response = iUserService.login(username,password);
+
         if(response.isSuccess()){
             User user = response.getData();
             if(user.getRole() == Const.Role.ROLE_ADMIN){
@@ -39,5 +43,7 @@ public class UserManagerController {
         return response;
 
     }
+
+
 
 }

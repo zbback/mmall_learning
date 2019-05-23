@@ -19,9 +19,9 @@ public class PropertiesUtil {
 
     static {
         String fileName = "mmall.properties";
-        props = new Properties();
+                props = new Properties();
         try {
-            props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"UTF-8"));
+            props.load(new InputStreamReader(PropertiesUtil.class.getClassLoader().getResourceAsStream(fileName),"utf-8"));
         } catch (IOException e) {
             logger.error("配置文件读取异常",e);
         }
