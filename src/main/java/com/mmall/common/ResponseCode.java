@@ -2,6 +2,7 @@ package com.mmall.common;
 
 /**
  * Created by Administrator on 2019/5/11.
+ *
  */
 public enum  ResponseCode {
     SUCCESS(0,"SUCCESS"),

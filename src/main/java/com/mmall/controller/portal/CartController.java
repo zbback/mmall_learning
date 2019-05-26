@@ -108,8 +108,6 @@ public class CartController {
         return iCartService.selectOrUnSelect(user.getId(),productId,Const.Cart.UN_CHECKED);
     }
 
-
-
     //查询当前用户的购物车里面的产品数量，如果一个产品有10个，那么数量就是10
     @RequestMapping("get_cart_product_count.do")
     @ResponseBody

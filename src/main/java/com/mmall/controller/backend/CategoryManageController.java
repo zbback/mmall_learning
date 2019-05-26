@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Created by Administrator on 2019/5/16.
+ *
  */
 @Controller
 @RequestMapping("/manage/category")
@@ -25,7 +26,6 @@ public class CategoryManageController {
 
     @Autowired
     private ICategoryService iCategoryService;
-
 
     @RequestMapping("add_category.do")
     @ResponseBody
@@ -39,12 +39,10 @@ public class CategoryManageController {
             //是管理员
             //增加我们处理分类的逻辑
             return iCategoryService.addCategory(categoryName,parentId);
-
         }else{
             return ServerResponse.createByErrorByMessage("无权限操作,需要管理员权限");
         }
     }
-
 
     @RequestMapping("set_category_name.do")
     @ResponseBody
@@ -60,7 +58,6 @@ public class CategoryManageController {
             return ServerResponse.createByErrorByMessage("无权限操作,需要管理员权限");
         }
     }
-
 
     @RequestMapping("get_category.do")
     @ResponseBody
@@ -88,7 +85,6 @@ public class CategoryManageController {
             //查询当前节点的id和递归子节点的id
 //            0->10000->100000
             return iCategoryService.selectCategoryAndChildrenById(categoryId);
-
         }else{
             return ServerResponse.createByErrorByMessage("无权限操作,需要管理员权限");
         }

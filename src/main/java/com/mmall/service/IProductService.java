@@ -7,6 +7,7 @@ import com.mmall.vo.ProductDetailVo;
 
 /**
  * Created by Administrator on 2019/5/17.
+ *
  */
 public interface IProductService {
 
