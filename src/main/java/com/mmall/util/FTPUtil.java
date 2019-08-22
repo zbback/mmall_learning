@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ *
  * Created by Administrator on 2019/5/20.
  */
 public class FTPUtil {
@@ -78,8 +79,6 @@ public class FTPUtil {
     }
 
 
-
-
     private String ip;
     private int port;
     private String user;
@@ -125,9 +124,6 @@ public class FTPUtil {
     public void setFtpClient(FTPClient ftpClient) {
         this.ftpClient = ftpClient;
     }
-
-
-
 
 
 

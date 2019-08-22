@@ -32,6 +32,4 @@ public class BigDecimallUtil {
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.divide(b2,2,BigDecimal.ROUND_HALF_UP);//四舍五入，保留两位小数     除不尽的情况
     }
-
-
 }

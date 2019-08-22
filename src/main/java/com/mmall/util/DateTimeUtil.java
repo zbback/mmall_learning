@@ -9,12 +9,11 @@ import java.util.Date;
 
 /**
  * Created by Administrator on 2019/5/17.
+ *
  */
 public class DateTimeUtil {
 
-
-    public static final String STANDARD_FORMAT="yyyy-MM-dd HH:mm:ss";
-
+    public static final String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     //joda-time
     public static Date strToDate(String dateTimeStr, String formatStr){
@@ -44,6 +43,4 @@ public class DateTimeUtil {
         DateTime dateTime = new DateTime(date);
         return  dateTime.toString(STANDARD_FORMAT);
     }
-
-
 }
