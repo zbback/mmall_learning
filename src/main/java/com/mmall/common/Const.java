@@ -91,7 +91,8 @@ public class Const {
 
 
     public enum PayPlatformEnum{
-        ALIPAY(1,"支付宝");
+        ALIPAY(1,"支付宝"),
+        WEIXING_PAY(2,"微信");
 
 
         PayPlatformEnum(int code,String value){
