@@ -111,8 +111,7 @@ public class Const {
     }
 
     public enum PaymentTypeEnum{
-        ONLIVE_PAY(1,"在线支付"),
-        OFFLINE_Pay(2,"线下支付");
+        ONLIVE_PAY(1,"在线支付");
 
         PaymentTypeEnum(int code,String value){
             this.code = code;
