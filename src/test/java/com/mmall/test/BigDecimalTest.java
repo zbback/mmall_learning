@@ -30,4 +30,16 @@ public class BigDecimalTest {
         BigDecimal b2 = new BigDecimal("0.01");
         System.out.println(b1.add(b2));
     }
+
+
+    @Test
+    public void test4(){
+        String str = "20190808";
+        System.out.println("开始时间："+System.currentTimeMillis());
+        String str2 = String.valueOf(Integer.parseInt(str)+1);
+        System.out.println("结束时间："+System.currentTimeMillis());
+        System.out.println(str2);
+
+
+    }
 }
