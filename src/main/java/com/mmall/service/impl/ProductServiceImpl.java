@@ -18,7 +18,6 @@ import com.mmall.vo.ProductDetailVo;
 import com.mmall.vo.ProductListVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.parsing.ReaderContext;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,24 +40,23 @@ public class ProductServiceImpl implements IProductService{
     private ICategoryService iCategoryService;
 
 
-
-    public ServerResponse saveOrUpdateProduct(Product product){
-        if(null != product){
-            if(StringUtils.isNotBlank(product.getSubImages())){
+    public ServerResponse saveOrUpdateProduct(Product product) {
+        if (null != product) {
+            if (StringUtils.isNotBlank(product.getSubImages())) {
                 String[] subImageArray = product.getSubImages().split(",");
-                if(subImageArray.length > 0){
+                if (subImageArray.length > 0) {
                     product.setMainImage(subImageArray[0]);
                 }
             }
-            if(product.getId() != null){
+            if (product.getId() != null) {
                 int rowCount = productMapper.updateByPrimaryKey(product);
-                if(rowCount > 0){
+                if (rowCount > 0) {
                     return ServerResponse.createBySuccessMessage("更新产品成功");
                 }
                 return ServerResponse.createByErrorByMessage("更新产品失败！");
-            }else{
+            } else {
                 int rowCount = productMapper.insert(product);
-                if(rowCount > 0){
+                if (rowCount > 0) {
                     return ServerResponse.createBySuccessMessage("新增产品成功");
                 }
                 return ServerResponse.createByErrorByMessage("新增产品失败！");

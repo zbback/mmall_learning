@@ -33,4 +33,13 @@ public class LambdaTest {
             System.out.println("a=" + a);
         });
     }
+
+
+
+    @Test
+    public void testCollection(){
+        List<String> list = new ArrayList<>();
+
+
+    }
 }
